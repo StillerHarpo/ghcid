@@ -53,7 +53,8 @@ recognize the new height until you manually restart it by calling
 "
   :lighter " Ghcid"
   (when (fboundp 'nlinum-mode) (nlinum-mode -1))
-  (linum-mode -1)
+  (when (fboundp 'linum-mode) (linum-mode -1))
+  (when (fboundp 'display-line-numbers-mode) (display-line-numbers-mode -1))
   (compilation-minor-mode))
 
 
